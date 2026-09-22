@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar venta | Clientess{% endblock %}
+
+{% block body %}
+    <div class="page-header">
+        <span class="text-primary fw-semibold">Ventas</span>
+        <h1 class="h2 mb-1">Editar venta</h1>
+        <p class="text-secondary mb-0">Actualiza los datos de la venta.</p>
+    </div>
+    <div class="card form-card shadow-sm">
+        <div class="card-body">{{ include('venta/_form.html.twig', {'button_label': 'Guardar cambios'}) }}</div>
+    </div>
+    <div class="mt-3">{{ include('venta/_delete_form.html.twig') }}</div>
+{% endblock %}

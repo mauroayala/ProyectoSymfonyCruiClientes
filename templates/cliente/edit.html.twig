@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar cliente | Clientess{% endblock %}
+
+{% block body %}
+    <div class="page-header">
+        <span class="text-primary fw-semibold">Clientes</span>
+        <h1 class="h2 mb-1">Editar cliente</h1>
+        <p class="text-secondary mb-0">Actualiza la información guardada.</p>
+    </div>
+    <div class="card form-card shadow-sm">
+        <div class="card-body">{{ include('cliente/_form.html.twig', {'button_label': 'Guardar cambios'}) }}</div>
+    </div>
+    <div class="mt-3">{{ include('cliente/_delete_form.html.twig') }}</div>
+{% endblock %}

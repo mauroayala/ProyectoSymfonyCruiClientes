@@ -1,0 +1,47 @@
+body {
+    background-color: #f4f7fb;
+    color: #243447;
+}
+
+.page-header {
+    margin-bottom: 1.5rem;
+}
+
+.form-card {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 1rem;
+}
+
+.form-card .card-body {
+    padding: 2rem;
+}
+
+.form-card label {
+    margin-bottom: .4rem;
+    font-weight: 600;
+}
+
+.form-card .form-control,
+.form-card .form-select {
+    border-radius: .6rem;
+    padding: .65rem .8rem;
+}
+
+.form-card .form-control:focus,
+.form-card .form-select:focus {
+    border-color: #6f9cff;
+    box-shadow: 0 0 0 .2rem rgba(13, 110, 253, .15);
+}
+
+.form-card .invalid-feedback {
+    display: block;
+}
+
+.actions {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}

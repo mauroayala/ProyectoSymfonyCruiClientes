@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo producto | Clientess{% endblock %}
+
+{% block body %}
+    <div class="page-header">
+        <span class="text-primary fw-semibold">Productos</span>
+        <h1 class="h2 mb-1">Nuevo producto</h1>
+        <p class="text-secondary mb-0">Agrega un producto al catálogo.</p>
+    </div>
+    <div class="card form-card shadow-sm">
+        <div class="card-body">{{ include('producto/_form.html.twig') }}</div>
+    </div>
+{% endblock %}

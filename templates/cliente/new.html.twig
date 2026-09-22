@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo cliente | Clientess{% endblock %}
+
+{% block body %}
+
+    <div class="page-header">
+        <span class="text-primary fw-semibold">Clientes</span>
+        <h1 class="h2 mb-1">Nuevo cliente</h1>
+        <p class="text-secondary mb-0">Completa los datos para registrar un nuevo cliente.</p>
+    </div>
+    <div class="card form-card shadow-sm">
+        <div class="card-body">{{ include('cliente/_form.html.twig') }}</div>
+    </div>
+{% endblock %}

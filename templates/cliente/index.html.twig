@@ -1,0 +1,62 @@
+{% extends 'baseAdministrador.html.twig' %}
+
+{% block title %}Listado de clientes Autopass{% endblock %}
+
+{% block body %}
+
+
+    <h1>Listado de clientes</h1>
+ 
+
+    {% set subtitulo = "esto es un subtitulo" %}
+
+   twig <h2>{{ subtitulo }}</h2>
+   php <h2> $subtitulo </h2>
+   js <h2>var subtitulo</h2>
+
+
+ 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Fecha Nacimiento</th>
+                <th>Domicilio</th>
+                <th>actions</th>
+             </tr>
+        </thead>
+        <tbody>
+         
+
+         {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.apellido }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.fechaNacimiento ? cliente.fechaNacimiento|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cliente.domicilio }}</td>
+                <td><a href="{{ path('app_cliente_show', {'id': cliente.id}) }}" class="btn btn-info">Ver</a>
+                    
+                    <a href="{{ path('app_cliente_edit', {'id': cliente.id}) }}" class="btn btn-warning">Editar</a>
+                </td>
+             </tr>
+         
+        {% else %}
+            <tr>
+                <td colspan="7">NO TENGO CLIENTES</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cliente_new') }}">Crear nuevo cliente</a>
+
+
+        <a href="{{ path('app_descargar_manual') }}">Descargar Manual</a>
+
+{% endblock %}

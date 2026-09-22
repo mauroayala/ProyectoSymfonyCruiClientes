@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cliente index{% endblock %}
+
+{% block body %}
+
+
+    <h1>Listado de clientes</h1>
+
+ 
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Fecha Nacimiento</th>
+                <th>Domicilio</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% set tengopermisodever = 1 %}
+
+
+        {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.apellido }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.fechaNacimiento ? cliente.fechaNacimiento|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cliente.domicilio }}</td>
+                <td>
+                {% if tengopermisodever==1 %}
+                    <a href="{{ path('app_cliente_show', {'id': cliente.id}) }}">show</a>
+                    
+                    <a href="{{ path('app_cliente_edit', {'id': cliente.id}) }}">edit</a>
+                {% endif%}
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cliente_new') }}">Crear nuevo cliente</a>
+{% endblock %}
